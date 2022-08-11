@@ -1,0 +1,23 @@
+body {
+    width: 100%;
+    height: 100vh;
+    header {
+        width: 50%;
+    }
+    .container {
+        width: 50%;
+    }
+    .table-1 {
+        width: 50%;
+        height: 10vh;
+    }
+}
+
+.todo-div {
+    border: 1px solid black;
+    margin-top: 0.5em;
+    width: 50%;
+    h1 {
+        padding-left: 0.5em;
+    }
+}
