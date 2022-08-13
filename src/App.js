@@ -1,13 +1,21 @@
 import './style/css.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Home from './components/Home';
-import Todo from './components/Todo';
 import History from './components/History';
 import exerciseModel from './exerciseModel';
+import CurrentWorkouts from './components/CurrentWorkouts';
 
 function App() {
-  const [ newRow, setNewRow ] = useState([exerciseModel]);
+  const [ newRow, setNewRow ] = useState([{
+    date: Date,
+    exercise: "",
+    sets: "",
+    reps: "",
+    lbs: ""
+  }]);
+  const [ workoutArr, setWorkoutArr ] = useState([])
 
+  //Function to add new row
   const addRow = () => {
 
     const date = document.getElementById('date').value;
@@ -19,7 +27,6 @@ function App() {
 
     setNewRow((x) => [...x,
     {
-      id: newRow.length + 1,
       date: date,
       exercise: exercise,
       select: select,
@@ -29,13 +36,20 @@ function App() {
     }])
   }
 
+  const getAllWorkouts = () => {
+    setWorkoutArr(newRow)
+  }
+
+
   return (
     <div className="App">
       <Home 
         exerciseModel={exerciseModel}
         addRow={addRow}
-        newRow={newRow}/>
-      <Todo />
+        newRow={newRow}
+        getAllWorkouts={getAllWorkouts}/>
+      <CurrentWorkouts 
+        workoutArr={workoutArr}/>
       <History />
     </div>
   );

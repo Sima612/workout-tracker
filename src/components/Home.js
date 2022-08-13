@@ -1,7 +1,7 @@
 import React from "react";
 
 function Home(props) {
-    const { exerciseModel, addRow, newRow } = props;
+    const { exerciseModel, addRow, newRow, getAllWorkouts } = props;
 
     return (
         <div>
@@ -10,14 +10,16 @@ function Home(props) {
             </header>
             <div class="container">
                 <table class="table-1">
-                    <tr class="row-1">
-                        <th>Date</th>
-                        <th>Exercise</th>
-                        <th>Muscle Group</th>
-                        <th># Sets</th>
-                        <th># Reps</th>
-                        <th>Lbs</th>
-                    </tr>
+                    <thead class="row-1">
+                        <tr>
+                            <th>Date</th>
+                            <th>Exercise</th>
+                            <th>Muscle Group</th>
+                            <th># Sets</th>
+                            <th># Reps</th>
+                            <th>Lbs</th>
+                        </tr>
+                    </thead>
                     <tr class="row-2">
                         <th>
                             <label htmlFor="date">{exerciseModel.date}</label>
@@ -28,11 +30,13 @@ function Home(props) {
                         </th>
                         <th>
                             <label htmlFor="exerciseName">{exerciseModel.exerciseName}</label>
-                            <input type="textarea"
-                                    id="exerciseName"/>
+                            <input type="text"
+                                    id="exerciseName"
+                                    />
                         </th>
                         <th>
                             <select id="select">
+                                <option></option>
                                 <option>Chest</option>
                                 <option>Shoulders</option>
                                 <option>Arms</option>
@@ -69,17 +73,17 @@ function Home(props) {
                                 id="lbs"/>
                         </th>
                     </tr>
-                        {newRow.map((row) => (
-                            <tr>
-                                <th>{row.date}</th>
-                                <th>{row.exercise}</th>
-                                <th>{row.select}</th>
-                                <th>{row.sets}</th>
-                                <th>{row.reps}</th>
-                                <th>{row.lbs}</th>
-                            </tr>
-                            ))
-                        }
+                    {newRow.map((row) => (
+                        <tr>
+                            <th>{row.date}</th>
+                            <th>{row.exercise}</th>
+                            <th>{row.select}</th>
+                            <th>{row.sets}</th>
+                            <th>{row.reps}</th>
+                            <th>{row.lbs}</th>
+                        </tr>
+                        ))
+                    }
                 </table>
                 <table className="table-2">
                     <tr>
@@ -87,8 +91,8 @@ function Home(props) {
                             <button onClick={() => addRow(newRow)}>
                                 + 
                             </button>
-                            <button>
-                                Add Workout
+                            <button onClick={() => getAllWorkouts()}>
+                                Add To Workout
                             </button>
                         </div>
                     </tr>
