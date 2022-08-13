@@ -1,4 +1,5 @@
 const exerciseModel = {
+    id: "1",
     date: Date,
     exerciseName: '',
     sets: [],

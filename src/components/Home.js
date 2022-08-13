@@ -1,7 +1,7 @@
 import React from "react";
 
 function Home(props) {
-    const { exerciseModel } = props;
+    const { exerciseModel, addRow, newRow } = props;
 
     return (
         <div>
@@ -29,15 +29,16 @@ function Home(props) {
                         <th>
                             <label htmlFor="exerciseName">{exerciseModel.exerciseName}</label>
                             <input type="textarea"
-                                />
+                                    id="exerciseName"/>
                         </th>
                         <th>
-                            <select>
-                                <option>Legs</option>
+                            <select id="select">
+                                <option>Chest</option>
                                 <option>Shoulders</option>
                                 <option>Arms</option>
+                                <option>Core</option>
                                 <option>Back</option>
-                                <option>Abs</option>
+                                <option>Legs</option>
                             </select>
                         </th>
                         <th>
@@ -68,11 +69,22 @@ function Home(props) {
                                 id="lbs"/>
                         </th>
                     </tr>
+                        {newRow.map((row) => (
+                            <tr>
+                                <th>{row.date}</th>
+                                <th>{row.exercise}</th>
+                                <th>{row.select}</th>
+                                <th>{row.sets}</th>
+                                <th>{row.reps}</th>
+                                <th>{row.lbs}</th>
+                            </tr>
+                            ))
+                        }
                 </table>
                 <table className="table-2">
                     <tr>
                         <div className="btn-div">
-                            <button>
+                            <button onClick={() => addRow(newRow)}>
                                 + 
                             </button>
                             <button>

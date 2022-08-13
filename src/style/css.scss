@@ -10,17 +10,21 @@ body {
     }
     .container {
         width: 50%;
+        text-align: left;
     }
     .table-1 {
         width: 100%;
         height: 10vh;
+        
     }
+    
     .table-2 {
         width: 100%;
         .btn-div {
             float: right;
             display: flex;
-            column-gap: 5px;
+            column-gap: 0.5em;
+            margin-top: 0.5em;
         }
     }
 }
