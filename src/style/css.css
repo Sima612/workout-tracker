@@ -9,15 +9,37 @@ body .container {
   width: 50%;
 }
 body .table-1 {
-  width: 50%;
+  width: 100%;
   height: 10vh;
+}
+body .table-2 {
+  width: 100%;
+}
+body .table-2 .btn-div {
+  float: right;
+  display: flex;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
 }
 
 .todo-div {
   border: 1px solid black;
   margin-top: 0.5em;
   width: 50%;
+  height: 40vh;
 }
 .todo-div h1 {
   padding-left: 0.5em;
+  text-align: center;
+}
+
+.history-div {
+  border: 1px solid black;
+  margin-top: 0.5em;
+  width: 50%;
+  height: 40vh;
+}
+.history-div h1 {
+  padding-left: 0.5em;
+  text-align: center;
 }/*# sourceMappingURL=css.css.map */

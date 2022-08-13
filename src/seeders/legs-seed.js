@@ -1,4 +1,5 @@
-module.exports = [{
+module.exports = [
+{
     exercise: 'Squat',
     style: 'Barbell',
     muscleGroup: 'Legs',
