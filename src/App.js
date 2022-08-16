@@ -35,7 +35,6 @@ function App() {
     setWorkoutArr(newRow)
   }
 
-
   return (
     <div className="App">
       <Router>
