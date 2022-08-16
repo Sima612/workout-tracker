@@ -73,16 +73,16 @@ function Home(props) {
                     </tr>
                     <br></br>
                     {newRow.map((row) => (
-                        <tbody>
-                            <tr>
-                                <th>{row.date}</th>
-                                <th>{row.exercise}</th>
-                                <th>{row.select}</th>
-                                <th>{row.sets}</th>
-                                <th>{row.reps}</th>
-                                <th>{row.lbs}</th>
-                            </tr>
-                        </tbody>
+                    <>
+                        <tr>
+                            <th>{row.date}</th>
+                            <th>{row.exercise}</th>
+                            <th>{row.select}</th>
+                            <th>{row.sets}</th>
+                            <th>{row.reps}</th>
+                            <th>{row.lbs}</th>
+                        </tr>
+                    </>
                     ))
                     }
                 </table>

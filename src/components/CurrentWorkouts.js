@@ -4,7 +4,7 @@ function CurrentWorkouts (props) {
 
     return (
         <div className="workout-container">
-            <h2>Current Workout</h2>
+            <h1>Workout Log</h1>
             <div className="workout-list">
                 <table className='table-1'>
                     <thead>
@@ -13,16 +13,17 @@ function CurrentWorkouts (props) {
                         <th># Reps</th>    
                         <th>Lbs</th>
                         <input type="checkbox"
+                            className="checkbox"
                             defaultChecked />
                     </thead>
                     <br></br>
                     <tbody className="table-body">
                         {workoutArr.map((x) => (
                         <tr>
-                            <td>{x.exercise}</td>
-                            <td>{x.sets}</td>
-                            <td>{x.reps}</td>
-                            <td>{x.lbs}</td> 
+                            <th>{x.exercise}</th>
+                            <th>{x.sets}</th>
+                            <th>{x.reps}</th>
+                            <th>{x.lbs}</th> 
                             <input type="checkbox" />
                         </tr>
                        ))}  
