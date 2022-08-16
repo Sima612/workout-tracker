@@ -8,31 +8,29 @@ function Home(props) {
             <header>
                 <h1>Workout Tracker</h1>
             </header>
-            <div class="container">
-                <table class="table-1">
-                    <thead class="row-1">
-                        <tr>
-                            <th>Date</th>
-                            <th>Exercise</th>
-                            <th>Muscle Group</th>
-                            <th># Sets</th>
-                            <th># Reps</th>
-                            <th>Lbs</th>
-                        </tr>
-                    </thead>
-                    <tr class="row-2">
+            <div className="container">
+                <table className="table-1">
+                    <tr className="row-1">
+                        <th>Date</th>
+                        <th>Exercise</th>
+                        <th>Muscle Group</th>
+                        <th># Sets</th>
+                        <th># Reps</th>
+                        <th>Lbs</th>
+                    </tr>
+                    <tr className="row-2">
                         <th>
                             <label htmlFor="date">{exerciseModel.date}</label>
-                            <input type="date" 
-                                name="date" 
+                            <input type="date"
+                                name="date"
                                 id="date"
-                                />
+                            />
                         </th>
                         <th>
                             <label htmlFor="exerciseName">{exerciseModel.exerciseName}</label>
                             <input type="text"
-                                    id="exerciseName"
-                                    />
+                                id="exerciseName"
+                            />
                         </th>
                         <th>
                             <select id="select">
@@ -53,7 +51,7 @@ function Home(props) {
                                 id="sets"
                                 name="sets"
                                 placeholder="3"
-                                />
+                            />
                         </th>
                         <th>
                             <label htmlFor="reps">{exerciseModel.reps}</label>
@@ -62,7 +60,7 @@ function Home(props) {
                                 max="99"
                                 id="reps"
                                 name="reps"
-                                placeholder='10'/>
+                                placeholder='10' />
                         </th>
                         <th>
                             <label htmlFor="lbs">{exerciseModel.lbs}</label>
@@ -70,26 +68,29 @@ function Home(props) {
                                 min="5"
                                 max="999"
                                 name="lbs"
-                                id="lbs"/>
+                                id="lbs" />
                         </th>
                     </tr>
+                    <br></br>
                     {newRow.map((row) => (
-                        <tr>
-                            <th>{row.date}</th>
-                            <th>{row.exercise}</th>
-                            <th>{row.select}</th>
-                            <th>{row.sets}</th>
-                            <th>{row.reps}</th>
-                            <th>{row.lbs}</th>
-                        </tr>
-                        ))
+                        <tbody>
+                            <tr>
+                                <th>{row.date}</th>
+                                <th>{row.exercise}</th>
+                                <th>{row.select}</th>
+                                <th>{row.sets}</th>
+                                <th>{row.reps}</th>
+                                <th>{row.lbs}</th>
+                            </tr>
+                        </tbody>
+                    ))
                     }
                 </table>
                 <table className="table-2">
                     <tr>
                         <div className="btn-div">
                             <button onClick={() => addRow(newRow)}>
-                                + 
+                                +
                             </button>
                             <button onClick={() => getAllWorkouts()}>
                                 Add To Workout

@@ -4,36 +4,30 @@ function CurrentWorkouts (props) {
 
     return (
         <div className="workout-container">
-            {console.log(workoutArr)}
-            <h1>Current Workout</h1>
+            <h2>Current Workout</h2>
             <div className="workout-list">
                 <table className='table-1'>
                     <thead>
-                        <td>
-                            <h3>Exercises</h3>
-                        </td>
-                        <td>
-                            <h3># Sets</h3>
-                        </td>
-                        <td>
-                            <h3># Reps</h3>
-                        </td>    
-                        <td>
-                            <h3>Lbs</h3>
-                        </td>
+                        <th>Exercises</th>
+                        <th># Sets</th>
+                        <th># Reps</th>    
+                        <th>Lbs</th>
+                        <input type="checkbox"
+                            defaultChecked />
                     </thead>
-                    <tbody>
+                    <br></br>
+                    <tbody className="table-body">
                         {workoutArr.map((x) => (
                         <tr>
                             <td>{x.exercise}</td>
                             <td>{x.sets}</td>
                             <td>{x.reps}</td>
                             <td>{x.lbs}</td> 
+                            <input type="checkbox" />
                         </tr>
                        ))}  
                     </tbody>
                 </table>
-                <button>Finished</button>
             </div>
         </div>
     )

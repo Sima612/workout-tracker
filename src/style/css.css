@@ -1,17 +1,15 @@
-* {
-  border: 1px solid red;
-}
-
 body {
-  width: 100%;
-  height: 100vh;
+  width: 70%;
+  height: 50vh;
+  margin: auto;
 }
 body header {
-  width: 50%;
+  width: 100%;
 }
 body .container {
-  width: 50%;
+  width: 100%;
   text-align: left;
+  border: 1px solid black;
 }
 body .table-1 {
   width: 100%;
@@ -29,20 +27,16 @@ body .table-2 .btn-div {
   -moz-column-gap: 0.5em;
        column-gap: 0.5em;
   margin-top: 0.5em;
-  margin-right: 1em;
+  margin-right: 0.3em;
 }
 
 .workout-container {
   border: 1px solid black;
-  margin-top: 0.5em;
-  width: 45%;
-  height: 45vh;
-  position: absolute;
-  top: 0.5em;
-  right: 0.5em;
+  margin: 5em auto 0;
+  width: 75%;
+  height: 50vh;
 }
-.workout-container h1 {
-  padding-left: 0.5em;
+.workout-container h2 {
   text-align: center;
 }
 .workout-container .workout-list {
@@ -65,4 +59,15 @@ body .table-2 .btn-div {
 .history-container h1 {
   padding-left: 0.5em;
   text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+  width: 100%;
+}
+.navbar a {
+  text-decoration: none;
+  font-size: large;
 }/*# sourceMappingURL=css.css.map */

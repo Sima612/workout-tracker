@@ -1,19 +1,14 @@
 import './style/css.css';
-import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import Home from './components/Home';
 import History from './components/History';
 import exerciseModel from './exerciseModel';
 import CurrentWorkouts from './components/CurrentWorkouts';
 
 function App() {
-  const [ newRow, setNewRow ] = useState([{
-    date: Date,
-    exercise: "",
-    sets: "",
-    reps: "",
-    lbs: ""
-  }]);
-  const [ workoutArr, setWorkoutArr ] = useState([])
+  const [newRow, setNewRow] = useState([]);
+  const [workoutArr, setWorkoutArr] = useState([])
 
   //Function to add new row
   const addRow = () => {
@@ -43,14 +38,28 @@ function App() {
 
   return (
     <div className="App">
-      <Home 
-        exerciseModel={exerciseModel}
-        addRow={addRow}
-        newRow={newRow}
-        getAllWorkouts={getAllWorkouts}/>
-      <CurrentWorkouts 
-        workoutArr={workoutArr}/>
-      <History />
+      <Router>
+
+        <navbar className="navbar">
+            <a><Link to='/'>Home</Link></a>
+            <a><Link to='/CurrentWorkout'>Workout</Link></a>
+        </navbar>
+
+        <Routes>
+
+          <Route path='/' element={<Home
+            exerciseModel={exerciseModel}
+            addRow={addRow}
+            newRow={newRow}
+            getAllWorkouts={getAllWorkouts} />}>
+          </Route>
+          <Route path='/CurrentWorkout' element={<CurrentWorkouts
+            workoutArr={workoutArr} />}>
+          </Route>
+
+        </Routes>
+
+      </Router>
     </div>
   );
 }
