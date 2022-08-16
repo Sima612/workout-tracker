@@ -1,7 +1,10 @@
 const express = require('express')
 const app = express()
-
 const { Sequelize } = require('sequelize')
+
+require('dotenv').config()
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 
 // const sequelize = new Sequelize(process.env.PG_URI)
 
