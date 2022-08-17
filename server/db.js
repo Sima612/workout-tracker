@@ -1,3 +1,4 @@
+//Requiring pg dependency
 const Pool = require('pg').Pool
 
 //Setting up configuration

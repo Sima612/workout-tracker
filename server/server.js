@@ -15,10 +15,10 @@ app.use(express.urlencoded({ extended: false }));
 // creating exercise
 app.post('/', async (req, res) => {
     try {
-        const { exercise_name } = req.body;
+        const { exercise_name, date, sets, reps, lbs } = req.body;
         const newExercise = await pool.query(
-            "INSERT INTO exercises (exercise_name) VALUES($1) RETURNING *",
-            [exercise_name]
+            "INSERT INTO exercises (exercise_name, date, sets, reps, lbs) VALUES($1, $2, $3, $4, $5) RETURNING *",
+            [exercise_name, date, sets, reps, lbs]
         )
 
         res.json(newExercise.rows[0])

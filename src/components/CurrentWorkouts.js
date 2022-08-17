@@ -1,5 +1,5 @@
 
-function CurrentWorkouts (props) {
+function CurrentWorkouts(props) {
     const { workoutArr } = props;
 
     return (
@@ -7,26 +7,28 @@ function CurrentWorkouts (props) {
             <h1>Workout Log</h1>
             <div className="workout-list">
                 <table className='table-1'>
-                    <thead>
-                        <th>Exercises</th>
-                        <th># Sets</th>
-                        <th># Reps</th>    
-                        <th>Lbs</th>
-                        <input type="checkbox"
-                            className="checkbox"
-                            defaultChecked />
-                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Exercises</th>
+                            <th># Sets</th>
+                            <th># Reps</th>
+                            <th>Lbs</th>
+                            <input type="checkbox"
+                                className="checkbox"
+                                defaultChecked />
+                        </tr>
+                    </tbody>
                     <br></br>
                     <tbody className="table-body">
                         {workoutArr.map((x) => (
-                        <tr>
-                            <th>{x.exercise}</th>
-                            <th>{x.sets}</th>
-                            <th>{x.reps}</th>
-                            <th>{x.lbs}</th> 
-                            <input type="checkbox" />
-                        </tr>
-                       ))}  
+                            <tr>
+                                <th>{x.exercise}</th>
+                                <th>{x.sets}</th>
+                                <th>{x.reps}</th>
+                                <th>{x.lbs}</th>
+                                <input type="checkbox" />
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>

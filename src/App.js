@@ -1,8 +1,8 @@
 import './style/css.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Navbar } from 'react-bootstrap';
 import React, { useState } from 'react';
 import Home from './components/Home';
-import exerciseModel from './exerciseModel';
 import CurrentWorkouts from './components/CurrentWorkouts';
 
 function App() {
@@ -38,15 +38,16 @@ function App() {
     <div className="App">
       <Router>
 
-        <navbar className="navbar">
-            <a><Link to='/'>Home</Link></a>
-            <a><Link to='/CurrentWorkout'>Workout</Link></a>
-        </navbar>
+        <Navbar className="navbar">
+          
+          <Link className="nav-link" to='/'>Home</Link>
+          <Link className="nav-link" to='/CurrentWorkout'>Workout</Link>
+           
+        </Navbar>
 
         <Routes>
 
           <Route path='/' element={<Home
-            exerciseModel={exerciseModel}
             addRow={addRow}
             newRow={newRow}
             getAllWorkouts={getAllWorkouts} />}>
