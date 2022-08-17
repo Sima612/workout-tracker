@@ -1,7 +1,10 @@
 # Milestone-project-3
 
 # Backend
-    Node/Express
+    Nodejs
+    Express
+    Cors
+    PG
 
 # Frontend
     JavaScript
@@ -12,9 +15,6 @@
     MySQL
         - at least 2 tables
         - at least one type database relationship 1:M || M:M
-
-# Packages used
-
 
 ##### WORKOUT APP/TRACKER #####
 
