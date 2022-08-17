@@ -2,7 +2,6 @@ import './style/css.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import Home from './components/Home';
-import History from './components/History';
 import exerciseModel from './exerciseModel';
 import CurrentWorkouts from './components/CurrentWorkouts';
 

@@ -1,16 +1,28 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
-const { Sequelize } = require('sequelize')
+const cors = require('cors')
 
-require('dotenv').config()
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+// const { Sequelize } = require('sequelize')
 
-// const sequelize = new Sequelize(process.env.PG_URI)
+//Middleware
+app.use(cors());
+app.use(express.json()); //req.body
+app.use(express.urlencoded({ extended: false }));
 
-// try {
-//     sequelize.authenticate()
-//     console.log(`Connected with Sequelize at ${process.env.PG_URI}`)
-// } catch(err) {
-//     console.log(`Unable to connect to PG: ${err}`)
-// }
+// Routes
+
+// creating exercise
+
+// get all exercise
+
+// get exercise
+
+// update exercise
+
+// delete exercise
+
+
+app.listen(5000, () => {
+    console.log('Server starting on port 5000')
+})
